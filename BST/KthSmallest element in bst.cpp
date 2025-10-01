@@ -16,21 +16,21 @@ Output: 3
 //          --------------------------O P T I M A L   S O L U T I O N -----------------------------
 
 
-int inorder(TreeNode*node,int &cnt ,int k){
+int inorder(TreeNode*node, int &cnt, int k){
     if(node == NULL) return -1;
-    int left = inorder(node->left,cnt,k);
-    if(left!=-1) return left;
+    int left = inorder(node->left, cnt, k);
+    if(left != -1) return left;
     cnt++;
-    if(cnt ==k) return node->val;
+    if(cnt == k) return node->val;
  
-    return inorder(node->right,cnt,k);
+    return inorder(node->right, cnt, k);
  }
 
 
 
     int kthSmallest(TreeNode* root, int k) {
-        int cnt =0;
-       int ans= inorder(root,cnt,k);
+        int cnt = 0;
+       int ans = inorder(root, cnt, k);
        return ans;
     }
 
