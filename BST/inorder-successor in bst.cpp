@@ -82,7 +82,7 @@ public:
         return left == (int)arr.size() ? -1 : left;
     }
 };
-
+//T.C:O(N)    S.C:O(N)    
 
 //  ------------------------------------------ B E T T E R --------------------------------------------
 
@@ -124,6 +124,8 @@ public:
         return successor;
     }
 };
+
+// T.C: O(N)    S.C:O(1)
 
 //          ---------------------------------------- O P T I M A L ---------------------------------------------------
 
@@ -178,6 +180,7 @@ void printInOrder(TreeNode* root) {
     printInOrder(root->right);
 }
 
+//T.C: O(height)    S.C:O(1)
 
 // -----------------------------------  S A M E      Q U E S T I O N     F R O M      G F G  ----------------------------
 /*
@@ -256,4 +259,8 @@ class Solution {
     }
     
 };
+
+//T.C: O(height)    S.C:O(1)
+
+
 
