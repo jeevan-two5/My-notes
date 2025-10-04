@@ -47,3 +47,75 @@ public:
         
     }
 };
+
+
+
+
+//  ------------------------------- D A A  L A B ------------------------
+#include <bits/stdc++.h>
+using namespace std;
+
+struct Node {
+    int data;
+    Node* left;
+    Node* right;
+    Node(int val) {
+        data = val;
+        left = right = NULL;
+    }
+};
+
+// Function to insert a new value into the BST
+Node* insert(Node* root, int val) {
+    if (!root) return new Node(val);
+    if (val < root->data)
+        root->left = insert(root->left, val);
+    else if (val > root->data)
+        root->right = insert(root->right, val);
+    return root;
+}
+
+// Function to find the Lowest Common Ancestor in a BST
+Node* LCA(Node* root, Node* p, Node* q) {
+    if (!root) return NULL;
+
+    if (root->data < p->data && root->data < q->data)
+        return LCA(root->right, p, q);
+
+    if (root->data > p->data && root->data > q->data)
+        return LCA(root->left, p, q);
+
+    // If one value lies on the left and one on the right, root is LCA
+    return root;
+}
+
+// Function to search and return a pointer to a node with a given value
+Node* find(Node* root, int val) {
+    if (!root) return NULL;
+    if (root->data == val) return root;
+    if (val < root->data) return find(root->left, val);
+    return find(root->right, val);
+}
+
+int main() {
+    Node* root = NULL;
+    vector<int> values = {6, 2, 9, 12, 13, 1, 0, 5};
+
+    // Build BST
+    for (int val : values)
+        root = insert(root, val);
+
+    // Choose two nodes to find LCA of (for example: 1 and 9)
+    Node* p = find(root, 1);
+    Node* q = find(root, 9);
+
+    Node* lca = LCA(root, p, q);
+
+    if (lca)
+        cout << "Lowest Common Ancestor of " << p->data << " and " << q->data << " is: " << lca->data << endl;
+    else
+        cout << "Nodes not found in the tree." << endl;
+
+    return 0;
+}
+
