@@ -1,4 +1,4 @@
-   =========== G R E E D Y     A L G O R I T H M S     T O P I C ' S ==============
+   =========== G R E E D Y   -   A L G O R I T H M S    -   T O P I C ' S ==============
 
 
 **✅**
