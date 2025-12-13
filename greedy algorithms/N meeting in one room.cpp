@@ -1,7 +1,7 @@
 int max_meetings(int start[] , int end[] , int n){
   vector<pair<int, int>> meet;
   for(int i = 0 ; i < n; i++){
-    meet.push_back( {end[i]}  ,  {start[i]}  );
+    meet.push_back( {end[i] ,  start[i]}  );
   }
   sort(meet.begin() , meet.end());
 
