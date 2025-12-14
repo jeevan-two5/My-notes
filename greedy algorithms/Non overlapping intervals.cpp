@@ -5,7 +5,7 @@ static bool comp(vector<int>&a, vector<int>&b){
 
 int f(vector<vector<int>>&I){ // I - intervals
   int n = I.size();
-  sort(I.begin(), I.end());
+  sort(I.begin(), I.end() ,comp);
   int ans = 1;
   int prev = I[0][1];
   for(int i = 1 ; i < I.size() ; i++){
